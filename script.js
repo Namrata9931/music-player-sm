@@ -11,6 +11,8 @@ const cover = document.getElementById('cover');
 const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
+const port = Process.env.PORT || 3000 ;
+
 // Song titles
 const songs = ['Jaan Ban Gaye', 'Main Khiladi Tu Anari', 'Beggin','Prem\'s Theme','Raataan Lambiyan','So Gaya Ye Jahan','Sun Saathiya','Tu Tu Hai Wahi','Ye Tune Kya Kiya', 'Peaches'];
 
@@ -176,3 +178,8 @@ audio.addEventListener('ended', nextSong);
 
 // Time of song
 audio.addEventListener('timeupdate',DurTime);
+
+
+server.listen(port,()=>{
+    console.log("server listening to port "+port);
+});
